@@ -83,7 +83,7 @@ pub fn err(comptime message: []const u8, values: anytype) void {
     log(std.log.err, message, values);
 }
 
-pub fn scoped(comptime scope: @Type(.enum_literal)) type {
+pub fn scoped(comptime scope: @TypeOf(.enum_literal)) type {
     const std_scope = std.log.scoped(scope);
 
     return struct {
